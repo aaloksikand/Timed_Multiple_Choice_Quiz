@@ -45,10 +45,10 @@ var body = document.body;
 var mainHeading = document.createElement("h1");// <h1> </h1> //Title Screen, Question Title, Game Result, High Scores//
 var mainContainer = document.createElement("div"); //// <main box></main box> //Description of Game, Question w/Answers, Your Score, Stored Scores//
 var mainText = document.createElement("p"); 
-var buttonOne = document.createElement("div");// <Button One></Button One> //Start Game, Start Over, Submit Initials, Reset Scores
-var buttonTwo = document.createElement("div"); // <Button Two></Button Two> //View High Scores, Timer, Start Over, Start Over
-var buttonOneTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
-var buttonTwoTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
+var buttonOne = document.createElement("button");// <Button One></Button One> //Start Game, Start Over, Submit Initials, Reset Scores
+var buttonTwo = document.createElement("button"); // <Button Two></Button Two> //View High Scores, Timer, Start Over, Start Over
+//var buttonOneTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
+//var buttonTwoTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
 var multipleChoice = 
 {
 qustionNumber: [1,2,3,4,5,6,7,8,9,10],
@@ -67,8 +67,8 @@ body.appendChild(mainContainer);  //No matter what phase of the game we are in, 
 body.appendChild(buttonOne); //No matter what phase of the game we are in, this will always be rendered.
 body.appendChild(buttonTwo); //No matter what phase of the game we are in, this will always be rendered.
 mainContainer.appendChild(mainText);
-buttonOne.appendChild(buttonOneTitle);
-buttonTwo.appendChild(buttonTwoTitle);
+//buttonOne.appendChild(buttonOneTitle);
+//buttonTwo.appendChild(buttonTwoTitle);
 
 //I would like to set style attributes for these four universal elements now.
 mainHeading.setAttribute("style", "background: blue; color: white;");
@@ -76,15 +76,16 @@ mainContainer.setAttribute("style", "background-color: blue; color: white;");
 mainText.setAttribute("style", "background-color: blue; color: white;");
 buttonOne.setAttribute("style", "background-color: blue; color: white;");
 buttonTwo.setAttribute("style", "background-color: blue; color: white;");
-buttonOneTitle.setAttribute("style", "background-color: blue; color: white;");
-buttonTwoTitle.setAttribute("style", "background-color: blue; color: white;");
+//buttonOneTitle.setAttribute("style", "background-color: blue; color: white;");
+//buttonTwoTitle.setAttribute("style", "background-color: blue; color: white;");
 
 mainHeading.textContent = "This is Javapardy!!!";
 mainText.textContent = "Click 'Start Quiz' and answer as many questions you can correctly before time lapses to earn the high score.  An incorrect answer will result in a three second time penalty.  Good luck!";
-buttonOneTitle.textContent = "Start Game";
-buttonTwoTitle.textContent = "High Scores";
+buttonOne.textContent = "Start Game";
+buttonTwo.textContent = "High Scores";
 
-console.log(buttonOneTitle);
+console.log(buttonOne)
+
 // function countdown()
 // {
 //     var timeLeft = 60;
