@@ -81,8 +81,10 @@ buttonTwoTitle.setAttribute("style", "background-color: blue; color: white;");
 
 mainHeading.textContent = "This is Javapardy!!!";
 mainText.textContent = "Click 'Start Quiz' and answer as many questions you can correctly before time lapses to earn the high score.  An incorrect answer will result in a three second time penalty.  Good luck!";
-buttoneOneTitle = "Start Game";
-buttonTwoTitle = "High Scores";
+buttonOneTitle.textContent = "Start Game";
+buttonTwoTitle.textContent = "High Scores";
+
+console.log(buttonOneTitle);
 // function countdown()
 // {
 //     var timeLeft = 60;
