@@ -1,7 +1,4 @@
-// <!-- USER STORY 
-//     AS A coding boot camp student
-//     I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-//     SO THAT I can gauge my progress compared to my peers
+
 
 //     ACCEPTANCE CRITERIA
 
@@ -44,41 +41,90 @@
 //     e.g. headerDiv.children[0].style.color = 'white';
 // 3.  Set Attirbutes
 //     -->
+var body = document.body;
+var mainHeading = document.createElement("h1");// <h1> </h1> //Title Screen, Question Title, Game Result, High Scores//
+var mainContainer = document.createElement("div"); //// <main box></main box> //Description of Game, Question w/Answers, Your Score, Stored Scores//
+var mainText = document.createElement("p"); 
+var buttonOne = document.createElement("div");// <Button One></Button One> //Start Game, Start Over, Submit Initials, Reset Scores
+var buttonTwo = document.createElement("div"); // <Button Two></Button Two> //View High Scores, Timer, Start Over, Start Over
+var buttonOneTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
+var buttonTwoTitle = document.createElement("h2");// It took me forever and a day to realize I had to create this because I was trying to creteText to a div first;
+var multipleChoice = 
+{
+qustionNumber: [1,2,3,4,5,6,7,8,9,10],
+question: ["1?","2?", "3?", "4?", "5?", "6?", "7?", "8?", "9?", "10?"],
+choiceA: ["blah1a", "blah2a", "blah3a", "blah4a", "blah5a", "blah6a", "blah7a", "blah8a", "blah9a", "blah10a"],
+choiceB: ["blah1b", "blah2b", "blah3b", "blah4b", "blah5b", "blah6b", "blah7b", "blah8b", "blah9b", "blah10b"],
+choiceC: ["blah1c", "blah2c", "blah3c", "blah4c", "blah5c", "blah6c", "blah7c", "blah8c", "blah9c", "blah10c"],
+choiceD: ["blah1d", "blah2d", "blah3d", "blah4d", "blah5d", "blah6d", "blah7d", "blah8d", "blah9d", "blah10d"],
+questionAnswer: ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10",]
+};
+var gameStarter = document.querySelector("#gameStarter")
+var userScore;
+
+body.appendChild(mainHeading);  //No matter what phase of the game we are in, this will always be rendered.
+body.appendChild(mainContainer);  //No matter what phase of the game we are in, this will always be rendered.
+body.appendChild(buttonOne); //No matter what phase of the game we are in, this will always be rendered.
+body.appendChild(buttonTwo); //No matter what phase of the game we are in, this will always be rendered.
+mainContainer.appendChild(mainText);
+buttonOne.appendChild(buttonOneTitle);
+buttonTwo.appendChild(buttonTwoTitle);
+
+//I would like to set style attributes for these four universal elements now.
+mainHeading.setAttribute("style", "background: blue; color: white;");
+mainContainer.setAttribute("style", "background-color: blue; color: white;");
+mainText.setAttribute("style", "background-color: blue; color: white;");
+buttonOne.setAttribute("style", "background-color: blue; color: white;");
+buttonTwo.setAttribute("style", "background-color: blue; color: white;");
+buttonOneTitle.setAttribute("style", "background-color: blue; color: white;");
+buttonTwoTitle.setAttribute("style", "background-color: blue; color: white;");
+
+mainHeading.textContent = "This is Javapardy!!!";
+mainText.textContent = "Click 'Start Quiz' and answer as many questions you can correctly before time lapses to earn the high score.  An incorrect answer will result in a three second time penalty.  Good luck!";
+buttoneOneTitle = "Start Game";
+buttonTwoTitle = "High Scores";
+// function countdown()
+// {
+//     var timeLeft = 60;
+//     var userScore = setInterval(function ()
+//     {
+//         if (timeLeft > 1)
+//         {
+//         timerEl.textContent = timeLeft;
+//         timeLeft--;
+//         }
+//         else {
+//             // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+//             timerEl.textContent = '';
+//             // Use `clearInterval()` to stop the timer
+//             clearInterval(timeInterval);
+//             // Call the `displayMessage()` function
+//             displayMessage();
+//           }
+//     }, 1000);
+// }
+
+//
+// function quizLoop()
+// { 
+//     for (var i = 0; i < multipleChoice.length; i++)    
+// login = document.createElement('h2');
+//     var profile = document.createElement('p');
+//     login.textContent = data[i].login;
+//     profile.textContent = data[i].url;
+//     userContainer.append(login);
+//     userContainer.append(issueTitle);
+
+// }
+
+// gameStarter.addEventListener("click", function() //we need to make an event listener on click game
+// {
+
+//     countdown()  //as soon as startButton is clicked timer starts;
 
 
-// <!-- Possible Skeleton HTML for Basic Acceptance Criteria Version
-// <main>
-// <h1> </h1> //Title Screen, Question Title, Game Result, High Scores//
-// <main box></main box> //Description of Game, Question w/Answers, Your Score, Stored Scores//
-// <Button One></Button One> //Start Game, Start Over, Submit Initials, Reset Scores
-// <Button Two></Button Two> //View High Scores, Timer, Start Over, Start Over
-
-// Potential Javascript
-// I would like to demonstrate my understanding of javascript by creating all html elements in javascript.
-// I would like to demonstrate my revulsion for CSS by also stylizing all elements in javascript
-// Potential Javascript variable
-// var body = document.body;
-// var mainContainer = document.createlement("div")
-// var mainHeading = document.createElement("h1")
-// var buttonOne = document.createElement("div")
-// var buttonTwo = document.createElement("div")
-// var multipleChoice = 
-//{
-    // qustionNumber: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    // question: 1?, 2?, 3?, 4?, 5?, 6?, 7?, 8?, 9?, 10?
-    // choiceA: blah1a, blah2a, blah3a, blah4a, blah5a, blah6a, blah7a, blah8a, blah9a, blah10a
-    // choiceB: blah1b, blah2b, blah3b, blah4b, blah5b, blah6b, blah7b, blah8b, blah9b, blah10b
-    // choiceC: blah1c, blah2c, blah3c, blah4c, blah5c, blah6c, blah7c, blah8c, blah9c, blah10c
-    // choiceD: blah1d, blah2d, blah3d, blah4d, blah5d, blah6d, blah7d, blah8d, blah9d, blah10d
-    // questionAnswer: a1, a2, a3, a4, a5, a6, a7, a8, a9, a10
-    // }
-//lets play with some interesting functions
-
-//Potential Javascript Functions
-//we need to run a function as soon as the Start Game button gets clicked
-//function startGame(); 
-//as soon as startButton is clicked
-//timer starts
+// }
+// )
 //question 1 with answers choices appears
 //when answer choice is clicked
 //user is given feedback regarding correct or incorrect
@@ -88,6 +134,10 @@
 //at that point run gameOver function
 //on gameOver function
 //post time
+
+
+
+
 
 
 
