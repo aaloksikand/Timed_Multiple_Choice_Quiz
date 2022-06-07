@@ -1,10 +1,6 @@
 
 
-//     ACCEPTANCE CRITERIA
 
-//     GIVEN I am taking a code quiz //div- code quiz
-//     WHEN I click the start button //div- start button
-//     THEN a timer starts and I am presented with a question //div- question box
 //     WHEN I answer a question //div- answer box with answer choices
 //     THEN I am presented with another question  //array of questions
 //     WHEN I answer a question incorrectly  //correct answer choices
@@ -59,8 +55,6 @@ choiceC: ["blah1c", "blah2c", "blah3c", "blah4c", "blah5c", "blah6c", "blah7c", 
 choiceD: ["blah1d", "blah2d", "blah3d", "blah4d", "blah5d", "blah6d", "blah7d", "blah8d", "blah9d", "blah10d"],
 questionAnswer: ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10",]
 };
-var gameStarter = document.querySelector("#gameStarter")
-var userScore;
 
 body.appendChild(mainHeading);  //No matter what phase of the game we are in, this will always be rendered.
 body.appendChild(mainContainer);  //No matter what phase of the game we are in, this will always be rendered.
@@ -84,28 +78,32 @@ mainText.textContent = "Click 'Start Quiz' and answer as many questions you can 
 buttonOne.textContent = "Start Game";
 buttonTwo.textContent = "High Scores";
 
-console.log(buttonOne)
+function countdown()  //potentil countdown function that will start on click
+{
+    var timeLeft = 60;
+    var timeInterval = setInterval (function () 
+    {
+        if (timeLeft > 0)
+        {
+            buttonTwo.textContent = timeLeft;
+            timeLeft--;
+        }
+        // else if 
+        // {
+        //     // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        //     timerEl.textContent = '';
+        //     // Use `clearInterval()` to stop the timer
+        //     clearInterval(timeInterval);
+        //     // Call the `displayMessage()` function
+        //     displayMessage();
+        // }
+        // else
+        // {
+        //     gameover()
+        // }
 
-// function countdown()
-// {
-//     var timeLeft = 60;
-//     var userScore = setInterval(function ()
-//     {
-//         if (timeLeft > 1)
-//         {
-//         timerEl.textContent = timeLeft;
-//         timeLeft--;
-//         }
-//         else {
-//             // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-//             timerEl.textContent = '';
-//             // Use `clearInterval()` to stop the timer
-//             clearInterval(timeInterval);
-//             // Call the `displayMessage()` function
-//             displayMessage();
-//           }
-//     }, 1000);
-// }
+     }, 1000);
+}
 
 //
 // function quizLoop()
@@ -120,10 +118,12 @@ console.log(buttonOne)
 
 // }
 
-// gameStarter.addEventListener("click", function() //we need to make an event listener on click game
-// {
-
-//     countdown()  //as soon as startButton is clicked timer starts;
+buttonOne.addEventListener("click", function()  //we need to make an event listener on click game
+{
+   countdown()      //on click start timer
+}
+)
+console.log(buttonTwo)
 
 
 // }
