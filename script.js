@@ -1,7 +1,3 @@
-//     WHEN all questions are answered or the timer reaches 0
-//     THEN the game is over
-//     WHEN the game is over
-//     THEN I can save my initials and score  -->
 var body = document.body;
 var mainHeading = document.createElement("h1");// <h1> </h1> //Title Screen, Question Title, Game Result, High Scores//
 var mainContainer = document.createElement("div"); //// <main box></main box> //Description of Game, Question w/Answers, Your Score, Stored Scores//
@@ -17,6 +13,7 @@ choiceC: ["It is an ordered list of string", "JavaScript uses bitwise checking",
 choiceD: ["It is an ordered list of functions", "JavaScript uses === and !== instead", "clear()", "Array", "interface", "console.writeHTML()", "//", "NaN", "square brackets []", "Length"],
 questionAnswer: ["It is an ordered list of values", "JavaScript uses === and !== instead", "clearInterval()", "Object", "event type", "console.log()", "//", "undefined", "curly brackets {}", "length",]
 };
+var timeLeft; //timeLeft looks like it needs to be a global function//
 
 body.appendChild(mainHeading);  
 body.appendChild(mainContainer);  
@@ -37,10 +34,10 @@ buttonTwo.textContent = "High Scores";
 
 function countdown()  
 {
-    var timeLeft = 60;
+    timeLeft = 60;  //timeLeft looks to be a global function//
     var timeInterval = setInterval (function () 
     {
-        if (timeLeft > 0)
+        if (timeLeft >= 0)
         {
             buttonTwo.textContent = timeLeft;
             timeLeft--;
@@ -73,11 +70,11 @@ var choice4 = document.createElement("button");
 
 mainText.textContent = "";
 
+mainText.appendChild(listAnswers);
 listAnswers.appendChild(choice1);
 listAnswers.appendChild(choice2);
 listAnswers.appendChild(choice3);
 listAnswers.appendChild(choice4);
-mainText.appendChild(listAnswers);
 
 mainHeading.textContent = multipleChoice.question[index];
 choice1.textContent = multipleChoice.choiceA[index];
@@ -87,13 +84,13 @@ choice4.textContent = multipleChoice.choiceD[index];
 
 choice1.addEventListener("click", function()
 {
-if (choice1.textContent === multipleChoice.questionAnswer[index]) 
+if (choice1.textContent === multipleChoice.questionAnswer[index].textContent) 
 {
-
+    console.log("Correct")
 }
 else
 {
-    "Incorrect"
+    console.log("Incorrect")
     timeLeft = timeLeft-3;
 }
 index++
@@ -107,6 +104,16 @@ choice4.textContent = multipleChoice.choiceD[index];
 
 choice2.addEventListener("click", function()
 {
+if (choice2.textContent === multipleChoice.questionAnswer[index].textContent) 
+{
+    console.log("Correct")
+}
+else
+{
+    console.log("Incorrect")
+    timeLeft = timeLeft-3;
+}
+
     index++
     mainHeading.textContent = multipleChoice.question[index];
     choice1.textContent = multipleChoice.choiceA[index];
@@ -118,6 +125,15 @@ choice2.addEventListener("click", function()
 
 choice3.addEventListener("click", function()
 {
+    if (choice3.textContent === multipleChoice.questionAnswer[index].textContent) 
+    {
+        console.log("Correct")
+    }
+    else
+    {
+        console.log("Incorrect")
+        timeLeft = timeLeft-3;
+    }
 index++
 mainHeading.textContent = multipleChoice.question[index];
 choice1.textContent = multipleChoice.choiceA[index];
@@ -129,6 +145,15 @@ choice4.textContent = multipleChoice.choiceD[index];
 
 choice4.addEventListener("click", function()
 {
+    if (choice2.textContent === multipleChoice.questionAnswer[index].textContent) 
+{
+    console.log("Correct")
+}
+else
+{
+    console.log("Incorrect")
+    timeLeft = timeLeft-3;
+}
 index++
 mainHeading.textContent = multipleChoice.question[index];
 choice1.textContent = multipleChoice.choiceA[index];
