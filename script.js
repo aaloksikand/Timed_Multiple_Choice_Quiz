@@ -10,12 +10,12 @@ var buttonOne = document.createElement("button");// <Button One></Button One> //
 var buttonTwo = document.createElement("button"); // <Button Two></Button Two> //View High Scores, Timer, Start Over, Start Over
 var multipleChoice = 
 {
-question: ["1?","2?", "3?", "4?", "5?", "6?", "7?", "8?", "9?", "10?"],
-choiceA: ["blah1a", "blah2a", "blah3a", "blah4a", "blah5a", "blah6a", "blah7a", "blah8a", "blah9a", "blah10a"],
-choiceB: ["blah1b", "blah2b", "blah3b", "blah4b", "blah5b", "blah6b", "blah7b", "blah8b", "blah9b", "blah10b"],
-choiceC: ["blah1c", "blah2c", "blah3c", "blah4c", "blah5c", "blah6c", "blah7c", "blah8c", "blah9c", "blah10c"],
-choiceD: ["blah1d", "blah2d", "blah3d", "blah4d", "blah5d", "blah6d", "blah7d", "blah8d", "blah9d", "blah10d"],
-questionAnswer: ["1?", "2?", "3?", "4?", "5?", "6?", "7?", "8?", "9?", "10?",]
+question: ["Question 1: Arrays in JavaScript are defined by which of the following statements?","Which of the following methods/operation does javascript use instead of == and !=?", "Which method receives the return value of setInterval() to cancel future invocations?", "The unordered collection of properties, each of which has a name and a value is called _________", "The type that specifies what kind of event occurred is ____________", "Which JavaScript method is used to write on browser's console?", "In JavaScript, single line comment begins with ___.", "What is the default value of an uninitialized variable?", "JavaScript objects are written with _____", "Which property is used to get the length of a string in JavaScript?"],
+choiceA: ["It is an ordered list of values", "JavaScript uses equalto()", "clearInvocation()", "String", "event type", "console.write()", "#", "0", "round brackets ()", "strlen"],
+choiceB: ["It is an ordered list of objects", "JavaScript uses equals() and notequals() instead", "cancelInvocation()", "Object", "event target", "console.output()", "/*", "undefined", "curly brackets {}", "len"],
+choiceC: ["It is an ordered list of string", "JavaScript uses bitwise checking", "clearInterval()", "Serialized Object", "both event type and even target", "console.log()", "$", "null", "double quotes", "length"],
+choiceD: ["It is an ordered list of functions", "JavaScript uses === and !== instead", "clear()", "Array", "interface", "console.writeHTML()", "//", "NaN", "square brackets []", "Length"],
+questionAnswer: ["It is an ordered list of values", "JavaScript uses === and !== instead", "clearInterval()", "Object", "event type", "console.log()", "//", "undefined", "curly brackets {}", "length",]
 };
 
 body.appendChild(mainHeading);  
@@ -89,7 +89,7 @@ choice1.addEventListener("click", function()
 {
 if (choice1.textContent === multipleChoice.questionAnswer[index]) 
 {
-    console.log("Correct");
+
 }
 else
 {
